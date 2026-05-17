@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Afazeres</title>
+  <title>Daily Tick</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
@@ -567,7 +567,7 @@
         <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
       </svg>
     </div>
-    <span class="topbar-title">Afazeres</span>
+    <span class="topbar-title">Daily Tick</span>
     <span class="topbar-count" id="topCount"></span>
   </nav>
 
@@ -575,7 +575,7 @@
 
     <!-- ─── Hero ─── -->
     <section class="hero">
-      <p class="hero-eyebrow">Lista de tarefas</p>
+      <p class="hero-eyebrow">Daily Tick</p>
       <h1>Organiza<em>ção</em><br>começa aqui.</h1>
       <p class="hero-sub">Adicione tarefas manualmente, cole texto com checkbox ou importe um JSON.</p>
 
@@ -627,7 +627,7 @@
     </section>
 
     <!-- ─── Task list ─── -->
-    <section class="tasks-card" aria-label="Lista de afazeres">
+    <section class="tasks-card" aria-label="Lista de tarefas Daily Tick">
       <div class="tasks-header">
         <span class="tasks-header-title">Tarefas</span>
         <button class="btn-clear" id="btnClear" aria-label="Limpar tudo">Limpar tudo</button>
@@ -649,7 +649,7 @@
   </main>
 
   <script>
-    const STORAGE_KEY = 'afazeres-v3';
+    const STORAGE_KEY = 'daily-tick-v1';
 
     const textInput   = document.getElementById('textInput');
     const jsonInput   = document.getElementById('jsonInput');
@@ -706,7 +706,7 @@
     function extractFromJson(data) {
       if (Array.isArray(data)) return data.map(normalizeTask).filter(t => t.text.length > 0);
       if (data && typeof data === 'object') {
-        const list = [data.tarefas, data.tasks, data.items, data.afazeres, data.lista, data.rotina, data.activities, data.atividades].find(Array.isArray);
+        const list = [data.tarefas, data.tasks, data.items, data.lista, data.rotina, data.activities, data.atividades].find(Array.isArray);
         if (list) return list.map(normalizeTask).filter(t => t.text.length > 0);
       }
       throw new Error('JSON inválido. Use um array de textos ou objetos com campo de texto.');
