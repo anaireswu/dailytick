@@ -437,6 +437,158 @@
     .btn-clear.visible { display: inline-flex; }
     .btn-clear:hover { color: var(--danger); box-shadow: 0 3px 10px rgba(0,0,0,0.07); }
 
+    .history-panel {
+      grid-column: 1 / -1;
+      display: none;
+      gap: 16px;
+    }
+    .history-panel.visible {
+      display: grid;
+      animation: fadeUp 0.35s cubic-bezier(.22,1,.36,1) both;
+    }
+    .history-panel-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 2px;
+    }
+    .history-panel h2 { margin-bottom: 0; min-width: min(100%, 260px); }
+    .history-copy {
+      margin: 16px 0 6px;
+      color: var(--text-dim);
+      font-size: 0.90rem;
+      line-height: 1.65;
+      font-weight: 700;
+      max-width: 620px;
+    }
+    .history-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .history-import-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    .btn-history {
+      min-height: 38px;
+      border-radius: 13px;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      background: var(--input-bg);
+      color: var(--text-main);
+      font-weight: 800;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      font-size: 0.74rem !important;
+      padding: 9px 14px;
+      box-shadow: none;
+      transition: transform 0.18s, box-shadow 0.18s, filter 0.18s, color 0.18s, background 0.18s;
+      white-space: nowrap;
+    }
+    .btn-history.primary {
+      border: none;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 4px 18px rgba(45,106,79,0.24);
+    }
+    .btn-history:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 7px 20px rgba(45,106,79,0.14);
+      filter: brightness(1.04);
+    }
+    .btn-history.primary:hover { box-shadow: 0 8px 24px rgba(45,106,79,0.34); }
+    .btn-history.danger:hover { color: var(--danger); background: rgba(193,68,14,0.08); }
+    .btn-history:active { transform: scale(0.98); }
+    .history-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .history-card {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 14px;
+      align-items: center;
+      background: var(--input-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .history-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(45,106,79,0.09);
+    }
+    .history-main {
+      display: grid;
+      gap: 4px;
+      min-width: 0;
+    }
+    .history-date {
+      color: var(--primary);
+      font-size: 0.94rem;
+      line-height: 1.35;
+      font-weight: 850;
+    }
+    .history-meta {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      line-height: 1.45;
+      font-weight: 750;
+    }
+    .history-preview {
+      color: var(--text-dim);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      font-weight: 650;
+      opacity: 0.82;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .history-stats {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .history-pill {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text-main);
+      padding: 8px 12px;
+      font-size: 0.78rem !important;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .history-empty {
+      background: var(--input-bg);
+      border: 1.5px dashed var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      color: var(--text-dim);
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+    }
+
     .tasks-panel { min-height: 540px; }
     .tasks-header {
       display: flex;
@@ -634,7 +786,12 @@
       .topbar-count.visible { display: inline-flex; }
       .theme-switch { width: 100%; padding: 11px 10px; text-align: center; white-space: nowrap; }
       .dashboard-container { max-width: 100%; grid-template-columns: 1fr; gap: 14px; }
-      .hint-box { padding: 13px 14px; border-radius: 16px; align-items: flex-start; gap: 10px; font-size: 0.84rem; }
+      /* No mobile, a lista de afazeres aparece antes do painel de adicionar. */
+      .tasks-panel { order: 1; }
+      .input-panel { order: 2; }
+      .history-panel { order: 3; }
+      .hint-box { order: 4; padding: 13px 14px; border-radius: 16px; align-items: flex-start; gap: 10px; font-size: 0.84rem; }
+      .footer-credits { order: 5; }
       .hint-box .hint-icon { font-size: 1.2rem; }
       .glass-card { border-radius: 22px; padding: 18px 16px; }
       h2 { font-size: 1.18rem; margin-bottom: 16px; }
@@ -644,6 +801,11 @@
       .btn-add { width: 100%; min-height: 52px; }
       .tasks-panel { min-height: auto; }
       .tasks-header { align-items: flex-start; }
+      .history-panel-header, .history-card { grid-template-columns: 1fr; }
+      .history-panel-header { display: grid; }
+      .history-actions, .history-stats { justify-content: stretch; }
+      .btn-history, .history-pill { flex: 1 1 auto; }
+      .history-preview { white-space: normal; }
       .task-delete { opacity: 1; transform: scale(1); }
       .footer-credits p { letter-spacing: 0.15em; }
     }
@@ -688,7 +850,7 @@
   <main class="dashboard-container">
     <section class="hint-box" id="hintBox" aria-label="Dica inicial">
       <span class="hint-icon">✓</span>
-      <span><strong>Daily Tick</strong> agora segue a mesma linguagem visual do modelo: cards translúcidos, topo centralizado, fundo com movimento suave e clique com som.</span>
+      <span><strong>Daily Tick</strong> salva automaticamente sua lista de hoje neste navegador. Se fechar e abrir de novo no mesmo dia, os ticks e as pendências continuam como você deixou.</span>
     </section>
 
     <section class="glass-card input-panel" aria-label="Adicionar tarefas">
@@ -759,14 +921,43 @@
       <ul class="task-list" id="taskList" aria-live="polite"></ul>
     </section>
 
+    <section class="glass-card history-panel" id="historyPanel" aria-label="Histórico de listas salvas">
+      <div class="history-panel-header">
+        <div>
+          <h2>Task History</h2>
+          <p class="history-copy">O site salva automaticamente os últimos 5 dias preenchidos neste navegador. Você também pode baixar um backup em JSON e subir esse arquivo depois para recuperar as listas.</p>
+        </div>
+        <div class="history-actions">
+          <button class="btn-history danger" id="btnClearHistory" type="button">Clear History</button>
+          <button class="btn-history" id="btnExportHistory" type="button">Baixar backup</button>
+          <button class="btn-history primary" id="btnImportHistory" type="button">Subir backup</button>
+          <input class="history-import-input" id="historyImportInput" type="file" accept="application/json,.json" aria-label="Subir backup do histórico" />
+        </div>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </section>
+
     <footer class="footer-credits">
-      <p>Daily Tick • organização em pequenos passos</p>
-      <p class="made-by">feito por anaires wu</p>
+      <p>© 2026 | Developed by Anaires Wu</p>
     </footer>
   </main>
 
   <script>
-    const STORAGE_KEY = 'daily-tick-v1';
+    const LEGACY_STORAGE_KEY = 'daily-tick-v1';
+    const STORAGE_PREFIX = 'daily-tick-dia';
+    const HISTORY_KEY = 'daily-tick-historico-ultimos-5';
+    const HISTORY_LIMIT = 5;
+
+    function getTodayId() {
+      const now = new Date();
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    const TODAY_ID = getTodayId();
+    const STORAGE_KEY = `${STORAGE_PREFIX}-${TODAY_ID}`;
 
     const textInput   = document.getElementById('textInput');
     const jsonInput   = document.getElementById('jsonInput');
@@ -780,6 +971,12 @@
     const btnClear     = document.getElementById('btnClear');
     const quickInput   = document.getElementById('quickInput');
     const btnAdd       = document.getElementById('btnAdd');
+    const historyPanel = document.getElementById('historyPanel');
+    const historyList = document.getElementById('historyList');
+    const btnClearHistory = document.getElementById('btnClearHistory');
+    const btnExportHistory = document.getElementById('btnExportHistory');
+    const btnImportHistory = document.getElementById('btnImportHistory');
+    const historyImportInput = document.getElementById('historyImportInput');
 
     let tasks = [];
 
@@ -915,8 +1112,201 @@
 
     const tasksToText = list => list.map(t => `[${t.done ? 'x' : ' '}] ${t.text}`).join('\n');
 
-    /* ─── Persist ─── */
-    const save = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    /* ─── Persist + history ─── */
+    function normalizeSavedTasks(list) {
+      if (!Array.isArray(list)) return [];
+      return list.map(normalizeTask).filter(t => t.text.length > 0);
+    }
+
+    function readHistory() {
+      try {
+        const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+        if (!Array.isArray(history)) return [];
+        return history
+          .map(entry => ({
+            date: String(entry.date || ''),
+            tasks: normalizeSavedTasks(entry.tasks || [])
+          }))
+          .filter(entry => /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && entry.tasks.length > 0)
+          .sort((a, b) => b.date.localeCompare(a.date))
+          .slice(0, HISTORY_LIMIT);
+      } catch (_) {
+        return [];
+      }
+    }
+
+    function writeHistory(history) {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, HISTORY_LIMIT)));
+    }
+
+    function updateHistoryForToday() {
+      let history = readHistory().filter(entry => entry.date !== TODAY_ID);
+
+      if (tasks.length > 0) {
+        history.unshift({
+          date: TODAY_ID,
+          tasks: tasks.map(t => ({ text: t.text, done: Boolean(t.done) }))
+        });
+      }
+
+      history = history
+        .filter(entry => entry.tasks.length > 0)
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .slice(0, HISTORY_LIMIT);
+
+      writeHistory(history);
+      renderHistory();
+    }
+
+    function formatHistoryDate(dateId) {
+      const [yyyy, mm, dd] = dateId.split('-');
+      const label = `${dd}/${mm}/${yyyy}`;
+
+      const current = new Date(`${dateId}T12:00:00`);
+      const today = new Date(`${TODAY_ID}T12:00:00`);
+      const diff = Math.round((today - current) / 86400000);
+
+      if (diff === 0) return `Hoje • ${label}`;
+      if (diff === 1) return `Ontem • ${label}`;
+      return label;
+    }
+
+    function renderHistory() {
+      if (!historyPanel || !historyList) return;
+      const history = readHistory();
+      historyPanel.classList.toggle('visible', history.length > 0);
+      historyList.innerHTML = '';
+
+      if (!history.length) {
+        historyList.innerHTML = '<div class="history-empty">Quando houver listas salvas, elas aparecerão aqui para carregar novamente.</div>';
+        return;
+      }
+
+      history.forEach(entry => {
+        const done = entry.tasks.filter(t => t.done).length;
+        const total = entry.tasks.length;
+        const pending = Math.max(total - done, 0);
+        const pct = total ? Math.round((done / total) * 100) : 0;
+        const preview = entry.tasks.slice(0, 3).map(t => t.text).join(' • ');
+        const item = document.createElement('article');
+        item.className = 'history-card';
+        item.innerHTML = `
+          <div class="history-main">
+            <div class="history-date">${formatHistoryDate(entry.date)}</div>
+            <div class="history-meta">${total} tarefa${total > 1 ? 's' : ''} • ${done} feita${done !== 1 ? 's' : ''} • ${pending} pendente${pending !== 1 ? 's' : ''}</div>
+            <div class="history-preview">${escHtml(preview || 'Sem prévia disponível')}</div>
+          </div>
+          <div class="history-stats">
+            <span class="history-pill">${pct}%</span>
+            <span class="history-pill">${done}/${total}</span>
+            <button class="btn-history primary" type="button" data-load-date="${entry.date}">Load</button>
+          </div>`;
+        historyList.appendChild(item);
+      });
+    }
+
+    const save = () => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+      localStorage.setItem(`${STORAGE_PREFIX}-ultima-data`, TODAY_ID);
+      updateHistoryForToday();
+    };
+
+    function loadHistoryDay(dateId) {
+      const entry = readHistory().find(item => item.date === dateId);
+      if (!entry) {
+        showToast('Dia salvo não encontrado');
+        renderHistory();
+        return;
+      }
+
+      const replacingToday = tasks.length > 0 && dateId !== TODAY_ID;
+      if (replacingToday && !confirm('Carregar esse dia vai substituir a lista atual. Continuar?')) return;
+
+      tasks = entry.tasks.map(t => ({ id: crypto.randomUUID(), text: t.text, done: Boolean(t.done) }));
+      textInput.value = tasksToText(tasks);
+      save();
+      render();
+      document.getElementById('hintBox')?.classList.add('hidden');
+      showToast(`Lista de ${formatHistoryDate(dateId).replace(' • ', ' ')} carregada`);
+    }
+
+    function clearHistory() {
+      if (!readHistory().length) return;
+      if (!confirm('Limpar o histórico dos últimos dias salvos?')) return;
+      localStorage.removeItem(HISTORY_KEY);
+      renderHistory();
+      playClick();
+      showToast('Histórico limpo');
+    }
+
+    function downloadHistoryBackup() {
+      const history = readHistory();
+      if (!history.length) {
+        showToast('Nenhum histórico para baixar');
+        return;
+      }
+      const payload = {
+        app: 'Daily Tick',
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        history: history.map(entry => ({
+          date: entry.date,
+          tasks: entry.tasks.map(t => ({ text: t.text, done: Boolean(t.done) }))
+        }))
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `daily-tick-backup-${TODAY_ID}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      playClick();
+      showToast('Backup baixado');
+    }
+
+    function normalizeImportedHistory(data) {
+      const rawHistory = Array.isArray(data) ? data : data?.history;
+      if (!Array.isArray(rawHistory)) throw new Error('Backup inválido. Use um arquivo JSON exportado pelo Daily Tick.');
+
+      const cleaned = rawHistory
+        .map(entry => ({
+          date: String(entry.date || entry.data || ''),
+          tasks: normalizeSavedTasks(entry.tasks || entry.tarefas || [])
+        }))
+        .filter(entry => /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && entry.tasks.length > 0)
+        .sort((a, b) => b.date.localeCompare(a.date));
+
+      if (!cleaned.length) throw new Error('Não encontrei listas válidas nesse backup.');
+
+      const merged = [...cleaned, ...readHistory()];
+      const unique = [];
+      const seen = new Set();
+      merged.forEach(entry => {
+        if (seen.has(entry.date)) return;
+        seen.add(entry.date);
+        unique.push(entry);
+      });
+      return unique.slice(0, HISTORY_LIMIT);
+    }
+
+    async function importHistoryBackup(file) {
+      if (!file) return;
+      clearError();
+      try {
+        const content = await file.text();
+        const data = JSON.parse(content);
+        const imported = normalizeImportedHistory(data);
+        writeHistory(imported);
+        renderHistory();
+        playClick();
+        showToast('Backup importado');
+      } catch (err) {
+        showError(err.message || 'Não consegui subir esse backup.');
+      }
+    }
 
     /* ─── Render ─── */
     function render() {
@@ -1029,6 +1419,19 @@
 
     btnAdd.addEventListener('click', addQuick);
     quickInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); addQuick(); } });
+    historyList?.addEventListener('click', e => {
+      const btn = e.target.closest('[data-load-date]');
+      if (!btn) return;
+      playClick();
+      loadHistoryDay(btn.getAttribute('data-load-date'));
+    });
+    btnClearHistory?.addEventListener('click', clearHistory);
+    btnExportHistory?.addEventListener('click', downloadHistoryBackup);
+    btnImportHistory?.addEventListener('click', () => { playClick(); historyImportInput?.click(); });
+    historyImportInput?.addEventListener('change', e => {
+      importHistoryBackup(e.target.files?.[0]);
+      historyImportInput.value = '';
+    });
 
     /* ─── Clear ─── */
     btnClear.addEventListener('click', () => {
@@ -1076,13 +1479,26 @@
     /* ─── Load ─── */
     function loadSaved() {
       try {
-        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        const todaySaved = localStorage.getItem(STORAGE_KEY);
+        const legacySaved = localStorage.getItem(LEGACY_STORAGE_KEY);
+        const raw = todaySaved ?? legacySaved ?? '[]';
+        const saved = JSON.parse(raw);
+
         if (Array.isArray(saved)) {
           tasks = saved.map(normalizeTask).filter(t => t.text.length > 0);
           textInput.value = tasksToText(tasks);
+
+          // Se existiam tarefas salvas na versão antiga, copia para a chave do dia atual.
+          if (!todaySaved && legacySaved) save();
         }
       } catch (_) { tasks = []; }
+
       render();
+      renderHistory();
+
+      if (tasks.length) {
+        document.getElementById('hintBox')?.classList.add('hidden');
+      }
     }
 
 
