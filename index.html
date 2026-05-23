@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -832,29 +832,29 @@
   </div>
   <div class="petals-layer" id="petalsLayer"></div>
 
-  <header class="top-bar" aria-label="Topo Daily Tick">
+  <header class="top-bar" aria-label="Daily Tick header">
     <div class="brand">
       <img class="brand-logo" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%20role%3D%22img%22%20aria-label%3D%22Daily%20Tick%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%2276%22%20y1%3D%2270%22%20x2%3D%22448%22%20y2%3D%22452%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2374D99F%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.52%22%20stop-color%3D%22%232D6A4F%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2312382D%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22shadow%22%20x%3D%22-18%25%22%20y%3D%22-18%25%22%20width%3D%22136%25%22%20height%3D%22136%25%22%20color-interpolation-filters%3D%22sRGB%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%2218%22%20stdDeviation%3D%2222%22%20flood-color%3D%22%2312382D%22%20flood-opacity%3D%220.24%22%2F%3E%0A%20%20%20%20%3C%2Ffilter%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22428%22%20height%3D%22428%22%20rx%3D%22126%22%20fill%3D%22url%28%23bg%29%22%20filter%3D%22url%28%23shadow%29%22%2F%3E%0A%20%20%3Crect%20x%3D%22142%22%20y%3D%22150%22%20width%3D%22188%22%20height%3D%2234%22%20rx%3D%2217%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%220.24%22%2F%3E%0A%20%20%3Crect%20x%3D%22142%22%20y%3D%22220%22%20width%3D%22122%22%20height%3D%2234%22%20rx%3D%2217%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%220.18%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M164%20282l62%2062%20130-162%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%2246%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E" alt="Daily Tick logo" />
       <div class="brand-copy">
         <h1>Daily Tick</h1>
-        <p>Organização diária inteligente</p>
+        <p>Simple daily organization</p>
       </div>
     </div>
     <div class="top-actions">
-      <button class="example-badge" id="btnExample" type="button"><span class="dot"></span> Exemplo</button>
+      <button class="example-badge" id="btnExample" type="button"><span class="dot"></span> Example</button>
       <span class="topbar-count" id="topCount"></span>
-      <button class="theme-switch" id="themeBtn" type="button">☀️ Claro</button>
+      <button class="theme-switch" id="themeBtn" type="button">☀️ Light</button>
     </div>
   </header>
 
   <main class="dashboard-container">
-    <section class="hint-box" id="hintBox" aria-label="Dica inicial">
+    <section class="hint-box" id="hintBox" aria-label="Quick tip">
       <span class="hint-icon">✓</span>
-      <span><strong>Daily Tick</strong> salva automaticamente sua lista de hoje neste navegador. Se fechar e abrir de novo no mesmo dia, os ticks e as pendências continuam como você deixou.</span>
+      <span><strong>Daily Tick</strong> automatically saves today's list in this browser. If you close it and come back later today, your checked and unchecked tasks will still be here.</span>
     </section>
 
-    <section class="glass-card input-panel" aria-label="Adicionar tarefas">
-      <h2>Adicionar tarefas</h2>
+    <section class="glass-card input-panel" aria-label="Add tasks">
+      <h2>Add tasks</h2>
 
       <div class="field-block">
         <div class="label-row">
@@ -862,9 +862,9 @@
             <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
             <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
           </svg>
-          <label for="textInput">Colar texto com checkbox</label>
+          <label for="textInput">Paste a checklist</label>
         </div>
-        <textarea id="textInput" placeholder="[ ] Beber água&#10;[x] Tomar café&#10;[ ] Estudar 30 minutos"></textarea>
+        <textarea id="textInput" placeholder="[ ] Drink water&#10;[x] Make coffee&#10;[ ] Study for 30 minutes"></textarea>
       </div>
 
       <div class="field-block">
@@ -872,10 +872,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
           </svg>
-          <label for="jsonInput">Importar JSON</label>
+          <label for="jsonInput">Import JSON</label>
         </div>
         <div class="dropzone" id="dropzone">
-          <input type="file" accept="application/json,.json" id="jsonInput" aria-label="Importar arquivo JSON" />
+          <input type="file" accept="application/json,.json" id="jsonInput" aria-label="Import JSON file" />
           <div>
             <div class="dropzone-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -883,8 +883,8 @@
                 <path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/>
               </svg>
             </div>
-            <p class="dropzone-text">Arraste ou toque para escolher</p>
-            <p class="dropzone-hint">Aceita .json com array ou objeto</p>
+            <p class="dropzone-text">Drag a file here or tap to choose</p>
+            <p class="dropzone-hint">Accepts a .json array or object</p>
           </div>
         </div>
       </div>
@@ -892,25 +892,25 @@
       <div id="error" class="error" role="alert"></div>
 
       <div class="quick-add">
-        <input class="quick-input" id="quickInput" type="text" placeholder="Nova tarefa..." aria-label="Nova tarefa" autocomplete="off" />
-        <button class="btn-add" id="btnAdd" aria-label="Adicionar tarefa" type="button">
+        <input class="quick-input" id="quickInput" type="text" placeholder="New task..." aria-label="New task" autocomplete="off" />
+        <button class="btn-add" id="btnAdd" aria-label="Add task" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
           </svg>
-          <span>Adicionar</span>
+          <span>Add</span>
         </button>
       </div>
     </section>
 
-    <section class="glass-card tasks-panel" aria-label="Lista de tarefas Daily Tick">
+    <section class="glass-card tasks-panel" aria-label="Daily Tick task list">
       <div class="tasks-header">
-        <h2>Tarefas de hoje</h2>
-        <button class="btn-clear" id="btnClear" aria-label="Limpar tudo" type="button">Limpar tudo</button>
+        <h2>Today's tasks</h2>
+        <button class="btn-clear" id="btnClear" aria-label="Clear all" type="button">Clear all</button>
       </div>
 
       <div class="progress-wrap" id="progressWrap">
         <div class="progress-header">
-          <span class="progress-label">Progresso do dia</span>
+          <span class="progress-label">Today's progress</span>
           <span class="progress-pct" id="progressPct">0%</span>
         </div>
         <div class="progress-track">
@@ -921,17 +921,17 @@
       <ul class="task-list" id="taskList" aria-live="polite"></ul>
     </section>
 
-    <section class="glass-card history-panel" id="historyPanel" aria-label="Histórico de listas salvas">
+    <section class="glass-card history-panel" id="historyPanel" aria-label="Saved task history">
       <div class="history-panel-header">
         <div>
           <h2>Task History</h2>
-          <p class="history-copy">O site salva automaticamente os últimos 5 dias preenchidos neste navegador. Você também pode baixar um backup em JSON e subir esse arquivo depois para recuperar as listas.</p>
+          <p class="history-copy">This site automatically saves the last 5 days you filled out in this browser. You can also download a JSON backup and upload it later to restore your lists.</p>
         </div>
         <div class="history-actions">
           <button class="btn-history danger" id="btnClearHistory" type="button">Clear History</button>
-          <button class="btn-history" id="btnExportHistory" type="button">Baixar backup</button>
-          <button class="btn-history primary" id="btnImportHistory" type="button">Subir backup</button>
-          <input class="history-import-input" id="historyImportInput" type="file" accept="application/json,.json" aria-label="Subir backup do histórico" />
+          <button class="btn-history" id="btnExportHistory" type="button">Download Backup</button>
+          <button class="btn-history primary" id="btnImportHistory" type="button">Upload Backup</button>
+          <input class="history-import-input" id="historyImportInput" type="file" accept="application/json,.json" aria-label="Upload history backup" />
         </div>
       </div>
       <div class="history-list" id="historyList"></div>
@@ -1052,7 +1052,7 @@
       const btn = document.getElementById('themeBtn');
       if (!btn) return;
       const isDark = document.body.getAttribute('data-theme') === 'dark';
-      btn.textContent = isDark ? '🌙 Escuro' : '☀️ Claro';
+      btn.textContent = isDark ? '🌙 Dark' : '☀️ Light';
     }
     function toggleTheme() {
       const next = document.body.getAttribute('data-theme') === 'dark' ? '' : 'dark';
@@ -1060,7 +1060,7 @@
       else document.body.removeAttribute('data-theme');
       localStorage.setItem('daily-tick-theme', next || 'light');
       updateThemeButton();
-      showToast(next ? 'Tema escuro ativado' : 'Tema claro ativado');
+      showToast(next ? 'Dark mode on' : 'Light mode on');
     }
 
 
@@ -1082,7 +1082,7 @@
         if (m) { done = ![' ','☐','□'].includes(m[1]); text = m[2].trim(); break; }
       }
       text = text.replace(/^[-*•]\s+/, '').trim();
-      return { id: crypto.randomUUID(), text: text || `Tarefa ${idx + 1}`, done };
+      return { id: crypto.randomUUID(), text: text || `Task ${idx + 1}`, done };
     }
 
     function parseText(value) {
@@ -1107,7 +1107,7 @@
         const list = [data.tarefas, data.tasks, data.items, data.lista, data.rotina, data.activities, data.atividades].find(Array.isArray);
         if (list) return list.map(normalizeTask).filter(t => t.text.length > 0);
       }
-      throw new Error('JSON inválido. Use um array de textos ou objetos com campo de texto.');
+      throw new Error('Invalid JSON. Use an array of text items or objects with a text field.');
     }
 
     const tasksToText = list => list.map(t => `[${t.done ? 'x' : ' '}] ${t.text}`).join('\n');
@@ -1160,14 +1160,14 @@
 
     function formatHistoryDate(dateId) {
       const [yyyy, mm, dd] = dateId.split('-');
-      const label = `${dd}/${mm}/${yyyy}`;
+      const label = `${mm}/${dd}/${yyyy}`;
 
       const current = new Date(`${dateId}T12:00:00`);
       const today = new Date(`${TODAY_ID}T12:00:00`);
       const diff = Math.round((today - current) / 86400000);
 
-      if (diff === 0) return `Hoje • ${label}`;
-      if (diff === 1) return `Ontem • ${label}`;
+      if (diff === 0) return `Today • ${label}`;
+      if (diff === 1) return `Yesterday • ${label}`;
       return label;
     }
 
@@ -1178,7 +1178,7 @@
       historyList.innerHTML = '';
 
       if (!history.length) {
-        historyList.innerHTML = '<div class="history-empty">Quando houver listas salvas, elas aparecerão aqui para carregar novamente.</div>';
+        historyList.innerHTML = '<div class="history-empty">Saved lists will show up here, so you can load them again later.</div>';
         return;
       }
 
@@ -1193,8 +1193,8 @@
         item.innerHTML = `
           <div class="history-main">
             <div class="history-date">${formatHistoryDate(entry.date)}</div>
-            <div class="history-meta">${total} tarefa${total > 1 ? 's' : ''} • ${done} feita${done !== 1 ? 's' : ''} • ${pending} pendente${pending !== 1 ? 's' : ''}</div>
-            <div class="history-preview">${escHtml(preview || 'Sem prévia disponível')}</div>
+            <div class="history-meta">${total} task${total !== 1 ? 's' : ''} • ${done} done • ${pending} pending</div>
+            <div class="history-preview">${escHtml(preview || 'No preview available')}</div>
           </div>
           <div class="history-stats">
             <span class="history-pill">${pct}%</span>
@@ -1214,35 +1214,35 @@
     function loadHistoryDay(dateId) {
       const entry = readHistory().find(item => item.date === dateId);
       if (!entry) {
-        showToast('Dia salvo não encontrado');
+        showToast('Saved day not found');
         renderHistory();
         return;
       }
 
       const replacingToday = tasks.length > 0 && dateId !== TODAY_ID;
-      if (replacingToday && !confirm('Carregar esse dia vai substituir a lista atual. Continuar?')) return;
+      if (replacingToday && !confirm('Loading this day will replace your current list. Continue?')) return;
 
       tasks = entry.tasks.map(t => ({ id: crypto.randomUUID(), text: t.text, done: Boolean(t.done) }));
       textInput.value = tasksToText(tasks);
       save();
       render();
       document.getElementById('hintBox')?.classList.add('hidden');
-      showToast(`Lista de ${formatHistoryDate(dateId).replace(' • ', ' ')} carregada`);
+      showToast(`List from ${formatHistoryDate(dateId).replace(' • ', ' ')} loaded`);
     }
 
     function clearHistory() {
       if (!readHistory().length) return;
-      if (!confirm('Limpar o histórico dos últimos dias salvos?')) return;
+      if (!confirm('Clear the saved task history?')) return;
       localStorage.removeItem(HISTORY_KEY);
       renderHistory();
       playClick();
-      showToast('Histórico limpo');
+      showToast('History cleared');
     }
 
     function downloadHistoryBackup() {
       const history = readHistory();
       if (!history.length) {
-        showToast('Nenhum histórico para baixar');
+        showToast('No history to download');
         return;
       }
       const payload = {
@@ -1264,12 +1264,12 @@
       a.remove();
       URL.revokeObjectURL(url);
       playClick();
-      showToast('Backup baixado');
+      showToast('Backup downloaded');
     }
 
     function normalizeImportedHistory(data) {
       const rawHistory = Array.isArray(data) ? data : data?.history;
-      if (!Array.isArray(rawHistory)) throw new Error('Backup inválido. Use um arquivo JSON exportado pelo Daily Tick.');
+      if (!Array.isArray(rawHistory)) throw new Error('Invalid backup. Use a JSON file exported from Daily Tick.');
 
       const cleaned = rawHistory
         .map(entry => ({
@@ -1279,7 +1279,7 @@
         .filter(entry => /^\d{4}-\d{2}-\d{2}$/.test(entry.date) && entry.tasks.length > 0)
         .sort((a, b) => b.date.localeCompare(a.date));
 
-      if (!cleaned.length) throw new Error('Não encontrei listas válidas nesse backup.');
+      if (!cleaned.length) throw new Error('I could not find any valid lists in this backup.');
 
       const merged = [...cleaned, ...readHistory()];
       const unique = [];
@@ -1302,9 +1302,9 @@
         writeHistory(imported);
         renderHistory();
         playClick();
-        showToast('Backup importado');
+        showToast('Backup imported');
       } catch (err) {
-        showError(err.message || 'Não consegui subir esse backup.');
+        showError(err.message || 'I could not upload this backup.');
       }
     }
 
@@ -1324,7 +1324,7 @@
       // top count
       const pending = tasks.filter(t => !t.done).length;
       topCount.classList.toggle('visible', total > 0);
-      topCount.textContent = pending > 0 ? `${pending} pendente${pending > 1 ? 's' : ''}` : '✓ Tudo feito';
+      topCount.textContent = pending > 0 ? `${pending} pending` : '✓ All done';
 
       // clear button
       btnClear.classList.toggle('visible', total > 0);
@@ -1343,8 +1343,8 @@
                 <line x1="16" y1="14" x2="16.01" y2="14"/>
               </svg>
             </div>
-            <p class="empty-title">Tudo vazio por aqui</p>
-            <p class="empty-sub">Adicione tarefas usando o campo abaixo, cole texto ou importe um JSON.</p>
+            <p class="empty-title">Nothing here yet</p>
+            <p class="empty-sub">Add a task, paste a checklist, or import a JSON file.</p>
           </li>`;
         return;
       }
@@ -1364,7 +1364,7 @@
             </svg>
           </div>
           <span class="task-text">${escHtml(task.text)}</span>
-          <button class="task-delete" aria-label="Remover tarefa" tabindex="-1">
+          <button class="task-delete" aria-label="Remove task" tabindex="-1">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
@@ -1436,7 +1436,7 @@
     /* ─── Clear ─── */
     btnClear.addEventListener('click', () => {
       if (!tasks.length) return;
-      if (confirm('Remover todas as tarefas?')) { playClick(); tasks = []; textInput.value = ''; save(); render(); showToast('Tarefas removidas'); }
+      if (confirm('Remove all tasks?')) { playClick(); tasks = []; textInput.value = ''; save(); render(); showToast('Tasks cleared'); }
     });
 
     /* ─── Text input ─── */
@@ -1455,10 +1455,10 @@
         const data = JSON.parse(content);
         setTasks(extractFromJson(data), true);
         playClick();
-        showToast('JSON importado');
+        showToast('JSON imported');
         document.getElementById('hintBox')?.classList.add('hidden');
       } catch (err) {
-        showError(err.message || 'Não consegui ler esse JSON.');
+        showError(err.message || 'I could not read this JSON file.');
       }
     }
 
@@ -1488,7 +1488,7 @@
           tasks = saved.map(normalizeTask).filter(t => t.text.length > 0);
           textInput.value = tasksToText(tasks);
 
-          // Se existiam tarefas salvas na versão antiga, copia para a chave do dia atual.
+          // If tasks were saved in the old version, copy them to today's key.
           if (!todaySaved && legacySaved) save();
         }
       } catch (_) { tasks = []; }
@@ -1507,15 +1507,15 @@
       sparkleClick(e);
       playStar();
       const sample = [
-        { text: 'Revisar prioridades do dia', done: true },
-        { text: 'Responder mensagens importantes', done: false },
-        { text: 'Estudar 30 minutos', done: false },
-        { text: 'Beber água', done: true },
-        { text: 'Organizar uma pequena pendência', done: false }
+        { text: "Review today's priorities", done: true },
+        { text: 'Reply to important messages', done: false },
+        { text: 'Study for 30 minutes', done: false },
+        { text: 'Drink water', done: true },
+        { text: 'Take care of one small pending task', done: false }
       ].map(item => ({ id: crypto.randomUUID(), ...item }));
       setTasks(sample, true);
       document.getElementById('hintBox')?.classList.add('hidden');
-      showToast('Exemplo carregado');
+      showToast('Example loaded');
     }
 
     document.getElementById('btnExample')?.addEventListener('click', fillExampleTasks);
